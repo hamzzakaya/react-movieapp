@@ -15,12 +15,11 @@ function Layout() {
       });
   }, []);
 
-  const API_KEY = '5cb9f839';
-  const API_URL = 'http://www.omdbapi.com/';
+ 
 
   const fetchMovies = async () => {
     try {
-      const response = await axios.get(`${API_URL}?s=${search}&apikey=${API_KEY}`);
+      const response = await axios.get(`https://www.omdbapi.com/?s=${search}&apikey=5cb9f839`);
       console.log(response);
       setMovies(response.data.Search || []);
     } catch (error) {
