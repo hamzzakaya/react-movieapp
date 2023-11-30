@@ -22,6 +22,7 @@ function Layout() {
       const response = await axios.get(`https://www.omdbapi.com/?s=${search}&apikey=5cb9f839`);
       console.log(response);
       setMovies(response.data.Search || []);
+      console.log(movies);
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
@@ -43,7 +44,7 @@ function Layout() {
 
       <div className="movie-container">
         {movies.map((movie) => (
-          <Box title={movie.Title} year={movie.Year} poster={movie.Poster} />
+          <Box movieID={movie.imdbID}/>
         ))}
       </div>
     </div>
