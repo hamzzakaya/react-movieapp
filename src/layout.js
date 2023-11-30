@@ -44,7 +44,7 @@ function Layout() {
 
       <div className="movie-container">
         {movies.map((movie) => (
-          <Box title={movie.Title} year={movie.Year} poster={movie.Poster} movieID={movie.imdbID} type={movie.Type}/>
+          <Box movieID={movie.imdbID}/>
         ))}
       </div>
     </div>
